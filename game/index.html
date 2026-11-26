@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Isles Airmail — a bush-plane mail run</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0a0f16;
+  }
+  #game {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    cursor: crosshair;
+    touch-action: none;
+  }
+  #fallback {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #cfe6f2;
+    font: 16px sans-serif;
+    text-align: center;
+    padding: 24px;
+  }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="800"></canvas>
+<div id="fallback">Ember Isles Airmail needs a browser with JavaScript and Canvas 2D.<br>Open this file in desktop Chrome.</div>
+<script type="module" src="./src/main.js"></script>
+<script>
+  window.addEventListener('error', function () {
+    document.getElementById('fallback').style.display = 'flex';
+  });
+</script>
+</body>
+</html>
